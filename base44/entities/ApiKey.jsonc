@@ -1,0 +1,56 @@
+{
+  "name": "ApiKey",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Friendly name for this key"
+    },
+    "key_hash": {
+      "type": "string",
+      "description": "SHA-256 hash of the API key"
+    },
+    "key_prefix": {
+      "type": "string",
+      "description": "First 8 chars of key for display"
+    },
+    "is_active": {
+      "type": "boolean",
+      "description": "Whether this key is enabled"
+    },
+    "permissions": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "numerical",
+          "calculus",
+          "linear_algebra",
+          "statistics",
+          "number_theory",
+          "symbolic",
+          "ai_solve",
+          "graph_theory"
+        ]
+      }
+    },
+    "rate_limit": {
+      "type": "number",
+      "description": "Max requests per minute"
+    },
+    "total_requests": {
+      "type": "number",
+      "description": "Lifetime request count"
+    },
+    "last_used": {
+      "type": "string",
+      "description": "ISO timestamp of last use"
+    }
+  },
+  "required": [
+    "name",
+    "key_hash",
+    "key_prefix",
+    "is_active"
+  ]
+}
