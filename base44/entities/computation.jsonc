@@ -1,0 +1,56 @@
+{
+  "name": "Computation",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string",
+      "description": "Brief title of the computation"
+    },
+    "input_expression": {
+      "type": "string",
+      "description": "The mathematical expression or problem input"
+    },
+    "mode": {
+      "type": "string",
+      "enum": [
+        "symbolic",
+        "numerical",
+        "ai_solve",
+        "statistics",
+        "linear_algebra",
+        "calculus",
+        "number_theory",
+        "graph_theory"
+      ],
+      "description": "Computation mode used"
+    },
+    "result": {
+      "type": "string",
+      "description": "The computed result"
+    },
+    "steps": {
+      "type": "string",
+      "description": "Step-by-step solution if available"
+    },
+    "execution_time_ms": {
+      "type": "number",
+      "description": "How long the computation took"
+    },
+    "is_favorite": {
+      "type": "boolean",
+      "description": "Whether this computation is bookmarked"
+    },
+    "tags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Tags for categorization"
+    }
+  },
+  "required": [
+    "input_expression",
+    "mode",
+    "result"
+  ]
+}
